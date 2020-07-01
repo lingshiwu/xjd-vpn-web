@@ -1,18 +1,18 @@
 <template>
 <body id="poster">
-  <el-form
-    label-position="top"
-    label-width="60px"
-    :model="loginData"
-    :rules="loginFromRules"
-    class="login-from"
-  >
+  <!-- rules="loginFromRules" -->
+  <el-form label-position="top" label-width="60px" :model="loginData" class="login-from">
     <h2 class="login-header">用户登录</h2>
     <el-form-item label="用户名" prop="username">
       <el-input v-model="loginData.username" prefix-icon="el-icon-user-solid"></el-input>
     </el-form-item>
     <el-form-item label="密码" prop="password">
-      <el-input v-model="loginData.password" prefix-icon="el-icon-lock"  show-password placeholder="请输入密码"></el-input>
+      <el-input
+        v-model="loginData.password"
+        prefix-icon="el-icon-lock"
+        show-password
+        placeholder="请输入密码"
+      ></el-input>
     </el-form-item>
     <el-form-item class="login-btns">
       <el-button class="login-btn" type="primary" @click="login">登录</el-button>
@@ -26,18 +26,19 @@
 export default {
   data() {
     return {
+      loginFromRules: [],
       loginData: {
         username: "",
         password: ""
-      },
+      }
     };
   },
   methods: {
     login() {
-      this.$router.push("/home");
+      this.$router.push("/");
     },
     regist() {
-        this.$router.push("/regist");
+      this.$router.push("/regist");
     }
   }
 };
@@ -57,7 +58,7 @@ body {
   position: fixed;
 }
 .login-from {
-  border-radius: 15px;
+  border-radius: 10px;
   background-clip: padding-box;
   margin: 200px auto;
   width: 350px;

@@ -6,6 +6,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/base.css'
 
+// 引入自定义指令
+import "./plugins/dialogDrag/directives";
 // import axios from 'axios'
 // Vue.prototype.$http=axios
 //自己的插件
