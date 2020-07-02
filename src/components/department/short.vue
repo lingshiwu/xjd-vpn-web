@@ -1,10 +1,10 @@
 <template>
-  <el-card >
+  <el-card class="box-card">
     <div slot="header" class="clearfix">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>部门管理</el-breadcrumb-item>
-        <el-breadcrumb-item>个人资产</el-breadcrumb-item>
+        <el-breadcrumb-item>临时资产</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <el-row>
@@ -12,7 +12,7 @@
         <el-card shadow="hover" ref="elCard" v-bind:style="elCard">
           <el-table :data="personData" style="width: 100%" height="600">
             <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
-            <el-table-column prop="owner" label="所属人" width="100"></el-table-column>
+            <el-table-column prop="owner" label="所属部门" width="100"></el-table-column>
             <el-table-column prop="ip" label="服务器IP" width="150"></el-table-column>
           </el-table>
         </el-card>
@@ -21,7 +21,7 @@
         <el-card shadow="hover" ref="elCard" v-bind:style="elCard">
           <el-table :data="personData" style="width: 100%" height="600">
             <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
-            <el-table-column prop="owner" label="所属人" width="100"></el-table-column>
+            <el-table-column prop="owner" label="所属部门" width="100"></el-table-column>
             <el-table-column prop="db" label="数据库" width="150"></el-table-column>
           </el-table>
         </el-card>
@@ -32,19 +32,10 @@
 <script>
 export default {
   data() {
-    return {
-      elCard: {
-        background: "rgb(221, 250, 237)"
-      },
-      personData: [
-        { owner: "张三", ip: "10.10.10.111" },
-        { owner: "李四", ip: "10.10.10.120", db: "10.10.10.120/3306" }
-      ]
-    };
+    return {};
   },
   methods: {}
 };
 </script>
 <style>
-
 </style>

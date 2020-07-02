@@ -83,6 +83,10 @@
                 <i class="el-icon-menu"></i>
                 <span>个人资产</span>
               </el-menu-item>
+              <el-menu-item index="short">
+                <i class="el-icon-menu"></i>
+                <span>临时资产</span>
+              </el-menu-item>
               <el-menu-item index="history">
                 <i class="el-icon-menu"></i>
                 <span>历史资产</span>
@@ -92,6 +96,10 @@
           <el-menu-item index="log">
             <i class="el-icon-setting"></i>
             <span slot="title">日志查看</span>
+          </el-menu-item>
+          <el-menu-item index="man">
+            <i class="el-icon-setting"></i>
+            <span slot="title">我的信息</span>
           </el-menu-item>
         </el-menu>
       </el-aside>

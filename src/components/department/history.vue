@@ -8,27 +8,60 @@
       </el-breadcrumb>
     </div>
     <el-row>
-      <el-col>
-        <el-table :data="histData" style="width: 100%" height="600">
-          <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
-          <el-table-column prop="identity" label="所属部门" width="120"></el-table-column>
-          <el-table-column prop="ip" label="服务器IP" width="150"></el-table-column>
-          <el-table-column prop="db" label="数据库" width="150"></el-table-column>
-          <el-table-column label="操作" width="300">
-            <el-button @click="delnetadmin" type="danger" size="mini" icon="el-icon-delete" circle></el-button>
-          </el-table-column>
-        </el-table>
-        <!-- 分页组件 -->
-        <div class="pagination">
-          <el-pagination
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :page-sizes="[1, 2, 3, 4]"
-            :page-size="1"
-            layout="total, sizes, prev, pager, next, jumper"
-            :total="6"
-          ></el-pagination>
-        </div>
+      <el-col :span="11">
+        <el-card>
+          <el-table :data="histData" style="width: 100%" height="530">
+            <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
+            <el-table-column prop="identity" label="所属部门" width="100"></el-table-column>
+            <el-table-column prop="ip" label="服务器IP" width="150"></el-table-column>
+            <el-table-column label="操作" width="300">
+              <el-button
+                @click="delnetadmin"
+                type="danger"
+                size="mini"
+                icon="el-icon-delete"
+                circle
+              ></el-button>
+            </el-table-column>
+          </el-table>
+          <!-- 分页组件 -->
+          <div style="margin-top:18px">
+            <el-pagination
+              :page-size="20"
+              layout="prev, pager, next"
+              :total="1000"
+              :pager-count="5"
+            ></el-pagination>
+          </div>
+        </el-card>
+      </el-col>
+
+      <el-col :span="11" :offset="1">
+        <el-card>
+          <el-table :data="histData" style="width: 100%" height="530">
+            <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
+            <el-table-column prop="identity" label="所属部门" width="100"></el-table-column>
+            <el-table-column prop="db" label="数据库" width="150"></el-table-column>
+            <el-table-column label="操作" width="300">
+              <el-button
+                @click="delnetadmin"
+                type="danger"
+                size="mini"
+                icon="el-icon-delete"
+                circle
+              ></el-button>
+            </el-table-column>
+          </el-table>
+          <!-- 分页组件 -->
+          <div style="margin-top:18px">
+            <el-pagination
+              :page-size="20"
+              layout="prev, pager, next"
+              :total="1000"
+              :pager-count="5"
+            ></el-pagination>
+          </div>
+        </el-card>
       </el-col>
     </el-row>
   </el-card>

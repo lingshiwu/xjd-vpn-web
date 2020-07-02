@@ -66,6 +66,10 @@ export default new Router({
         path: 'man',
         name: 'man',
         component: () => import('@/components/man.vue')
+      },{
+        path: 'short',
+        name: 'short',
+        component: () => import('@/components/department/short.vue')
       }
       ]
     }
