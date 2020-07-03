@@ -8,13 +8,13 @@
       </el-breadcrumb>
     </div>
     <el-row>
-      <el-col :span="11">
-        <el-card>
-          <el-table :data="histData" style="width: 100%" height="530">
+      <el-col style="width: 480px" :offset="2">
+        <el-card shadow="hover">
+          <el-table :data="histData" style="width: 450px" height="600">
             <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
-            <el-table-column prop="identity" label="所属部门" width="100"></el-table-column>
-            <el-table-column prop="ip" label="服务器IP" width="150"></el-table-column>
-            <el-table-column label="操作" width="300">
+            <el-table-column prop="identity" label="所属部门" width="110"></el-table-column>
+            <el-table-column prop="ip" label="服务器IP" width="160"></el-table-column>
+            <el-table-column label="操作" width="100">
               <el-button
                 @click="delnetadmin"
                 type="danger"
@@ -36,13 +36,13 @@
         </el-card>
       </el-col>
 
-      <el-col :span="11" :offset="1">
-        <el-card>
-          <el-table :data="histData" style="width: 100%" height="530">
+      <el-col style="width: 480px" :offset="2">
+        <el-card shadow="hover">
+          <el-table :data="histData" style="width: 450px" height="600">
             <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
-            <el-table-column prop="identity" label="所属部门" width="100"></el-table-column>
-            <el-table-column prop="db" label="数据库" width="150"></el-table-column>
-            <el-table-column label="操作" width="300">
+            <el-table-column prop="identity" label="所属部门" width="110"></el-table-column>
+            <el-table-column prop="db" label="数据库" width="160"></el-table-column>
+            <el-table-column label="操作" width="100">
               <el-button
                 @click="delnetadmin"
                 type="danger"
