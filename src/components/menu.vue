@@ -8,13 +8,8 @@
           </div>
         </el-col>
         <el-col :span="6">
-          <el-dropdown>
-            <el-button type="text" icon="el-icon-user">我的</el-button>
-            <el-dropdown-menu>
-              <el-dropdown-item index="man">个人中心</el-dropdown-item>
-              <el-dropdown-item>退出</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+          <el-button type="text" style="color:white" @click="toman">你好!{姓名}</el-button>
+          <el-button type="text" icon="el-icon-switch-button" style="color:black">退出</el-button>
         </el-col>
       </el-row>
     </el-header>
@@ -55,20 +50,7 @@
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>审核申请</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="applyregist">
-                <el-badge value="new">
-                  <i class="el-icon-s-order"></i>
-                  <span>注册申请</span>
-                </el-badge>
-              </el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
+
           <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-location"></i>
@@ -90,6 +72,20 @@
               <el-menu-item index="history">
                 <i class="el-icon-menu"></i>
                 <span>历史资产</span>
+              </el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>审核申请</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="applyregist">
+                <el-badge value="new">
+                  <i class="el-icon-s-order"></i>
+                  <span>注册申请</span>
+                </el-badge>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -123,6 +119,9 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    toman(){
+      this.$router.push("/man");
     }
   }
 };
@@ -142,6 +141,7 @@ export default {
 
 .aside {
   background-color: #545c64;
+  color: black;
 }
 .main {
   background-color: white;

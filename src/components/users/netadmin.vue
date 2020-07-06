@@ -14,7 +14,7 @@
         </el-input>
         <el-button class="btn-cre" type="primary">增加</el-button>
       </el-col>
-      <el-table :data="tableData" style="width: 100%" height="600">
+      <el-table :data="tableData" style="width: 100%;margin-top:80px" height="570">
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
         <el-table-column prop="name" label="用户名" width="120"></el-table-column>
@@ -26,21 +26,27 @@
         </el-table-column>
         <el-table-column prop="date" label="授权时间" width="150"></el-table-column>
         <el-table-column label="操作" width="300">
-          <el-button
-            @click="dialogEditForm=true"
-            type="primary"
-            size="mini"
-            icon="el-icon-edit"
-            circle
-          ></el-button>
-          <el-button
-            @click="ruleDialog=true"
-            type="success"
-            size="mini"
-            icon="el-icon-check"
-            circle
-          ></el-button>
-          <el-button @click="delnetadmin" type="danger" size="mini" icon="el-icon-delete" circle></el-button>
+          <el-tooltip class="item" effect="light" content="修改" placement="top">
+            <el-button
+              @click="dialogEditForm=true"
+              type="primary"
+              size="mini"
+              icon="el-icon-edit"
+              circle
+            ></el-button>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="权限管理" placement="top">
+            <el-button
+              @click="ruleDialog=true"
+              type="success"
+              size="mini"
+              icon="el-icon-s-tools"
+              circle
+            ></el-button>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="删除" placement="top">
+            <el-button @click="delnetadmin" type="danger" size="mini" icon="el-icon-delete" circle></el-button>
+          </el-tooltip>
         </el-table-column>
       </el-table>
       <!-- 分页组件 -->

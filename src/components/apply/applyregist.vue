@@ -16,10 +16,10 @@
       <el-table-column prop="mobilphone" label="手机号" width="150"></el-table-column>
       <el-table-column prop="email" label="邮箱" width="200"></el-table-column>
       <el-table-column prop="zip" label="操作" width="300">
-        <el-tooltip class="item" effect="dark" content="添加用户" placement="top">
+        <el-tooltip class="item" effect="light" content="添加用户" placement="top">
           <el-button @click="addadmin" type="success" size="mini" icon="el-icon-check" circle></el-button>
         </el-tooltip>
-        <el-tooltip class="item" effect="dark" content="修改信息" placement="top">
+        <el-tooltip class="item" effect="light" content="修改信息" placement="top">
           <el-button
             @click="dialogEditForm=true"
             type="primary"
@@ -28,7 +28,7 @@
             circle
           ></el-button>
         </el-tooltip>
-        <el-tooltip class="item" effect="dark" content="删除申请" placement="top">
+        <el-tooltip class="item" effect="light" content="删除申请" placement="top">
           <el-button @click="delApply" type="danger" size="mini" icon="el-icon-delete" circle></el-button>
         </el-tooltip>
       </el-table-column>

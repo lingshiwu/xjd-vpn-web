@@ -1,14 +1,14 @@
 <template>
-  <el-card>
+  <el-card :body-style="{height: '750px'}">
     <div slot="header" class="clearfix">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>我的信息</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <el-row>
-      <el-col :offset="9" style="width:400px">
-        <el-card :body-style="{width:'350px'}">
+    <el-row style="margin-top:50px">
+      <el-col :offset="8" style="width:400px">
+        <el-card :body-style="{width:'350px'}" shadow="hover">
           <el-form :label-position="labelPosition" label-width="100px" :model="formLabelAlign">
             <el-form-item label="姓名：">
               <span>姓名 姓名</span>
@@ -135,4 +135,7 @@ export default {
 };
 </script>
 <style >
+.ss{
+  height: 100%;
+}
 </style>

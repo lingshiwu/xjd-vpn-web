@@ -9,12 +9,12 @@
     </div>
     <el-row>
       <el-col>
-        <el-input placeholder="请输入内容" v-model="input3" class="searchinput">
+        <el-input placeholder="请输入内容" class="searchinput">
           <el-button slot="append" icon="el-icon-search"></el-button>
         </el-input>
         <el-button class="btn-cre" type="primary">增加</el-button>
       </el-col>
-      <el-table :data="tableData" style="width: 100%" height="500">
+      <el-table :data="tableData" style="width: 100%;margin-top:80px" height="570">
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
         <el-table-column prop="name" label="用户名" width="120"></el-table-column>
@@ -25,17 +25,76 @@
           <el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
         </el-table-column>
         <el-table-column prop="date" label="授权时间" width="150"></el-table-column>
-        <el-table-column prop="zip" label="操作" width="300">
-          <el-button type="primary" size="mini" icon="el-icon-edit" circle></el-button>
-          <el-button type="success" size="mini" icon="el-icon-check" circle></el-button>
-          <el-button type="danger" size="mini" icon="el-icon-delete" circle></el-button>
+        <el-table-column label="操作" width="300">
+          <el-tooltip class="item" effect="light" content="修改" placement="top">
+            <el-button type="primary" size="mini" icon="el-icon-edit" circle></el-button>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="权限管理" placement="top">
+            <el-button type="success" size="mini" icon="el-icon-s-tools" circle></el-button>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="修改" placement="top">
+            <el-button type="danger" size="mini" icon="el-icon-delete" circle></el-button>
+          </el-tooltip>
         </el-table-column>
       </el-table>
+      <!-- 分页组件 -->
+      <div class="pagination">
+        <el-pagination
+          :page-sizes="[1, 2, 3, 4]"
+          :page-size="1"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="6"
+        ></el-pagination>
+      </div>
     </el-row>
   </el-card>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      value: true,
+      tableData: [
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          identity: "图书馆管理员",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-08",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-06",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-07",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        }
+      ]
+    };
+  }
+};
 </script>
 <style scoped>
 .searchinput {
@@ -43,5 +102,8 @@ export default {};
 }
 .btn-cre {
   margin-left: 100px;
+}
+.pagination {
+  margin: 40px;
 }
 </style>

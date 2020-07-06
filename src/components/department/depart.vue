@@ -15,7 +15,7 @@
           style="margin-right:20px;float:right"
         >增加部门</el-button>
         <el-button
-          @click="daiAddDepart=true"
+          @click="daiProAuth=true"
           type="success"
           style="margin-right:20px;float:right" plain
         >临时授权</el-button>
@@ -29,6 +29,18 @@
       </el-col>
       <el-col></el-col>
     </el-row>
+    <!-- 临时授权 -->
+    <el-dialog title="临时授权" :visible.sync="daiProAuth" v-dialogDrag center width="400px">
+      <el-form :model="form">
+        <el-form-item label="部门名称:" :label-width="formLabelWidth">
+          <el-input v-model="form.name" autocomplete="on"></el-input>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="daiProAuth = false">取 消</el-button>
+        <el-button type="primary" @click="proAuth">确 定</el-button>
+      </div>
+    </el-dialog>
     <!-- 增加部门 -->
     <el-dialog title="增加部门" :visible.sync="daiAddDepart" v-dialogDrag center width="400px">
       <el-form :model="form">
@@ -109,6 +121,7 @@
 export default {
   data() {
     return {
+      daiProAuth:false,
       daiAddDepart: false,
       diaAddDuankou: false,
       diaAddIP: false,
@@ -136,6 +149,10 @@ export default {
     addDepart() {
       this.daiAddDepart = false;
       this.$message.success("新增部门成功!");
+    },
+    proAuth(){
+      this.daiProAuth = false;
+      this.$message.success("临时授权成功!");
     }
   }
 };
