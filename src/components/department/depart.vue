@@ -17,10 +17,12 @@
         <el-button
           @click="daiProAuth=true"
           type="success"
-          style="margin-right:20px;float:right" plain
+          style="margin-right:20px;float:right"
+          plain
         >临时授权</el-button>
       </el-col>
     </el-row>
+    <el-divider></el-divider>
     <el-row>
       <el-col>
         <div>
@@ -121,7 +123,7 @@
 export default {
   data() {
     return {
-      daiProAuth:false,
+      daiProAuth: false,
       daiAddDepart: false,
       diaAddDuankou: false,
       diaAddIP: false,
@@ -150,7 +152,7 @@ export default {
       this.daiAddDepart = false;
       this.$message.success("新增部门成功!");
     },
-    proAuth(){
+    proAuth() {
       this.daiProAuth = false;
       this.$message.success("临时授权成功!");
     }
@@ -160,5 +162,8 @@ export default {
 <style>
 .dropdown {
   height: 150px;
+}
+.box-card {
+  height: 870px;
 }
 </style>

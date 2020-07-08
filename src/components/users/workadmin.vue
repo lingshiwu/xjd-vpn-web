@@ -19,12 +19,13 @@
         <el-table-column fixed type="index" label="编号" width="60"></el-table-column>
         <el-table-column prop="name" label="用户名" width="120"></el-table-column>
         <el-table-column prop="identity" label="身份" width="120"></el-table-column>
-        <el-table-column prop="city" label="手机号" width="150"></el-table-column>
-        <el-table-column prop="address" label="邮箱" width="200"></el-table-column>
+        <el-table-column prop="tel" label="手机号" width="150"></el-table-column>
+        <el-table-column prop="email" label="邮箱" width="200"></el-table-column>
         <el-table-column prop="zip" label="授权状态" width="120">
           <el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
         </el-table-column>
         <el-table-column prop="date" label="授权时间" width="150"></el-table-column>
+        <el-table-column prop="auth_duration" label="授权时长" width="150"></el-table-column>
         <el-table-column label="操作" width="300">
           <el-tooltip class="item" effect="light" content="修改" placement="top">
             <el-button type="primary" size="mini" icon="el-icon-edit" circle></el-button>
@@ -58,8 +59,10 @@ export default {
         {
           date: "2016-05-03",
           name: "王小虎",
-          identity: "图书馆管理员",
-          address: "上海市普陀区金沙江路 1518 弄"
+          identity: "网络安全管理员",
+          tel:12345678901,
+          email: "1245678901@qq.com",
+          auth_duration: 30
         },
         {
           date: "2016-05-02",
