@@ -29,7 +29,6 @@
           <el-button type="primary" @click="diaAsset=true">部门名称</el-button>
         </div>
       </el-col>
-      <el-col></el-col>
     </el-row>
     <!-- 临时授权 -->
     <el-dialog title="临时授权" :visible.sync="daiProAuth" v-dialogDrag center width="400px">
